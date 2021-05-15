@@ -1,0 +1,4 @@
+spacy==3.0.3
+numpy==1.19.5
+mpire==1.2.2
+quickumls==1.4.0.post1
