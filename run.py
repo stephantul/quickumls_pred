@@ -24,8 +24,13 @@ if __name__ == "__main__":
     total = sum(classes.values()) + (len(classes) * smoothing)
     priors = {k: (v + smoothing) / total for k, v in classes.items()}
 
+    path = None
+
+    if path is None:
+        raise ValueError("Please specify the path to the quickumls installation.")
+
     q = QuickUMLSClassifier.load(
-        "../quickumls_rnd/.",
+        path,
         threshold=0.99,
         similarity_name="jaccard",
         priors=priors,
